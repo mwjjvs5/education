@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,8 +9,8 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body style =" background-image:url(../../images/diary.png); background-size: 100%; background-repeat:no-repeat; ">           
+    <div class="navbar navbar-inverse navbar-fixed-top" style="font-family:'Book Antiqua';">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,23 +18,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Cloud diary demo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @if (Context.User.Identity.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Diary", "Index", "Diary")</li>
-                    }
-
-                    <li>@Html.ActionLink("Contact", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "Index", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" style="color:aqua;">
         @RenderBody()
         <hr />
         <footer>
